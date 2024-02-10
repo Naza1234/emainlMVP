@@ -11,10 +11,7 @@ exports.summary = async (req, res) => {
         const summary = await generateSummary(description); // Await the result of generateSummary
       
         // Respond with the summary and API key
-        res.status(200).json({ 
-            summary: summary,
-            chatgptApiKey: process.env.CHATGPT_API_KEY 
-        }); 
+        res.status(200).json(summary); 
     } catch (error) {
         console.error('Error:', error);
         res.status(500).json({ message: error.message });
@@ -45,7 +42,7 @@ function generateSummary(description) {
                  thorough and meets a minimum of 5000 characters. The transcript should only include what the host would say.`}
             ],
             "temperature": 0.7,
-            "max_tokens": 5000
+            "max_tokens": 1000
           }
           )
     };
