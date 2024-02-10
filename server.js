@@ -17,11 +17,12 @@ app.use("/image", express.static("./image"));
 // Import all routes
 const userRoutes = require('./routes/user.routes');
 const userEmailRoutes = require('./routes/userEmail.routes');
-
+const summaryRoutes = require('./routes/summary.routes');
 
 // Use the routes
 app.use('/user', userRoutes);
 app.use('/userEmail', userEmailRoutes);
+app.use('/summary', summaryRoutes);
 
 var password="DEFIServerpassword"
 // Database connection

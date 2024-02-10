@@ -1,14 +1,14 @@
 const UserEmail = require('../models/userEmail.model');
-
-
+require('dotenv').config()
 
 
 function generateTitle(description) {
     // Your ChatGPT API endpoint
     const apiUrl = 'https://api.openai.com/v1/chat/completions';
-
+    
+    const apiKey = process.env.CHATGPT_API_KEY;
     // Your API key for authorization
-    const apiKey = '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';
+  
 
     // Define the request parameters
     const requestOptions = {
@@ -57,7 +57,7 @@ function generateSummary(description) {
     const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
     // Your API key for authorization
-    const apiKey = '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';
+    const apiKey = process.env.CHATGPT_API_KEY;
 
     // Define the request parameters
     const requestOptions = {
