@@ -67,7 +67,7 @@ function generateSummary(description) {
         })
         .catch(error => {
             console.error('Error:', error);
-            return null; // Return null in case of an error
+            return error.message; // Return null in case of an error
         });
 }
 
