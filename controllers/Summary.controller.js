@@ -53,10 +53,6 @@ function generateSummary(description) {
     // Send the request to the ChatGPT API
     return fetch(apiUrl, requestOptions)
         .then(response => {
-            // Check if the response is successful
-            if (!response.ok) {
-                throw new Error('Failed to fetch data from ChatGPT API');
-            }
             // Parse the JSON response and return the generated title
             return response.json();
         })
