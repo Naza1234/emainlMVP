@@ -8,7 +8,7 @@ function generateTitle(description) {
     const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
     // Your API key for authorization
-    const apiKey = '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';
+    const apiKey = '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';
 
     // Define the request parameters
     const requestOptions = {
@@ -24,7 +24,7 @@ function generateTitle(description) {
               {"role": "user", "content": `Generate a two word title for my podcast episode ${description} write the tile as : this is the tile. mote i want the title to be only two words at maximum three remove the generated tile`}
             ],
             "temperature": 0.7,
-            "max_tokens": 10
+            "max_tokens": 20
           }
           )
     };
@@ -57,7 +57,7 @@ function generateSummary(description) {
     const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
     // Your API key for authorization
-    const apiKey = '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';
+    const apiKey = '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';
 
     // Define the request parameters
     const requestOptions = {
@@ -78,7 +78,7 @@ function generateSummary(description) {
               `}
             ],
             "temperature": 0.7,
-            "max_tokens": 50
+            "max_tokens": 500
           }
           )
     };
