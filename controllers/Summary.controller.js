@@ -2,24 +2,24 @@
 require('dotenv').config()
 
 
-
 // Define the function to generate summary
 exports.summary = async (req, res) => {
     try {
         const { description } = req.body; // Extract description from request body
+        
         // Call the generateSummary function
-        const [ summary] = await Promise.all([
-             generateSummary(description)
-        ]);
-        // Respond with the summary
-        res.status(200).json({summary});
+        const summary = await generateSummary(description); // Await the result of generateSummary
+      
+        // Respond with the summary and API key
+        res.status(200).json({ 
+            summary: summary,
+            chatgptApiKey: process.env.CHATGPT_API_KEY 
+        }); 
     } catch (error) {
         console.error('Error:', error);
         res.status(500).json({ message: error.message });
     }
 };
-
-
 
 function generateSummary(description) {
     // Your ChatGPT API endpoint
