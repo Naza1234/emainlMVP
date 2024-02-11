@@ -43,7 +43,7 @@ function generateSummary(description) {
                    Then deep dive into the topics and use illustrative anecdotes, dotes, or comparisons to make the content tangible and relatable. Incorporate creative segments (if applicable) 
                    to add depth and interest. Structure the narrative to fit within a 5-10 minute episode, ensuring a dynamic and informative listener experience.`} ],
             "temperature": 0.7,
-            "max_tokens": 500
+            "max_tokens": 1000
           }
           )
     };
