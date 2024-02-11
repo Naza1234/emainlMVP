@@ -34,15 +34,16 @@ function generateSummary(description) {
         }, 
         body: JSON.stringify({
             "model": "gpt-3.5-turbo",
-            "messages": [
-                {"role": "system", "content": "You are the host of a podcast."},
-                {"role": "user", "content": `Please provide a detailed summary of the content in the following email newsletters: ${description}.
-                 In your introduction, mention the number of newsletters your podcast is based on. Summarize the most interesting points, 
-                 providing an engaging and comprehensive overview. Include additional context or research if available. Ensure that the summary is 
-                 thorough and meets a minimum of 5000 characters. The transcript should only include what the host would say.`}
-            ],
+            "messages": [ 
+                {"role": "system", "content": "As the host of a captivating podcast, your episodes bring to life the most interesting findings from email newsletters in a natural, conversational manner. Each episode is crafted to entertain and inform, lasting between 5-10 minutes."},
+                 {"role": "user", "content": `With the email newsletters described as:
+                  ${description}, 
+                  select and focus on the most fascinating topics, dedicating approximately 40 seconds to 2 minutes per topic. Not all topics need to be covered;
+                   prioritize those that will contribute to an amazing podcast experience. Begin with a brief, captivating introduction that sparks vuriosity. 
+                   Then deep dive into the topics and use illustrative anecdotes, dotes, or comparisons to make the content tangible and relatable. Incorporate creative segments (if applicable) 
+                   to add depth and interest. Structure the narrative to fit within a 5-10 minute episode, ensuring a dynamic and informative listener experience.`} ],
             "temperature": 0.7,
-            "max_tokens": 1000
+            "max_tokens": 500
           }
           )
     };
